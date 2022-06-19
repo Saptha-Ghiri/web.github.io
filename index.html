@@ -247,7 +247,7 @@ transition-duration:0.5s;}
 .con-1{
   height: 100px;
   width: 1500px;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   background-color: white;
@@ -256,16 +256,72 @@ transition-duration:0.5s;}
   height: 1500px;
   background-color: green;
   position: relative;
-width: 1500px;
+min-width: 1500px;
 left: 0;
+  z-index: -1;
+
 }
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+
+.slideshow-container {
+  top: 150px;
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+    z-index: 0;
+
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
 	</style>
 	<title>Seyal Foundation</title>
 </head>
 <body>
   <div class="con">
 	<div class="con-1">
-    <img class="logo" src="https://github.com/Saptha-Ghiri/web.github.io/blob/main/logo-wbg.png?raw=true">
+    <img class="logo" src="F:\pages\logo-wbg.png">
 	<button class="bt-1">About Us</button>
 	<button class="bt-2">Our Work</button>
 	<button class="bt-3">Founder's Words</button>
@@ -273,9 +329,60 @@ left: 0;
 	<button class="bt-5">Media</button>
 	<button class="bt-6">Contact Us</button>
 	<button class="bt-7">DONATE NOW</button>
-	
 	</div>
-  <div class="con-2"></div>
-  </div>
+	<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="https://imgs.search.brave.com/TeRkB-Jfi2zDLziTZOcungQoVFcYxNlEii3HGqVk_a8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE2LzA2LzIz/LzM4MzA3NC1OZXdf/WmVhbGFuZC1sYW5k/c2NhcGUuanBn" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="https://imgs.search.brave.com/si1278NIqPP6wRycC2mA0j2StxTEEPu7BHrjZhge4fE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9waXhu/aW8uY29tL2ZyZWUt/aW1hZ2VzLzIwMTcv/MTIvMTkvMjAxNy0x/Mi0xOS0yMS0yOC0x/NS5qcGc" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="https://imgs.search.brave.com/Z-h-VfXYjzFtdOO8muzzbSwMZoqfUTMMe8XwwKrEbQg/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE5LzA5LzI5/NTc4NC1tb3VudGFp/bnMtbGFuZHNjYXBl/cy1uYXR1cmUtY2Fs/aWZvcm5pYS1zdHJl/YW1zLWxhbmQuanBn" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 4</div>
+  <img src="https://imgs.search.brave.com/Z-h-VfXYjzFtdOO8muzzbSwMZoqfUTMMe8XwwKrEbQg/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93YWxs/dXAubmV0L3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE5LzA5LzI5/NTc4NC1tb3VudGFp/bnMtbGFuZHNjYXBl/cy1uYXR1cmUtY2Fs/aWZvcm5pYS1zdHJl/YW1zLWxhbmQuanBn" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+</div>
+<br>
+
+<div class="con-2">
+  
+</div>
+
+  <script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 5000); 
+}
+</script>
+
+
+
+
+
+
 </body>
-</html>
+</html> 
